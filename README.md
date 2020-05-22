@@ -8,7 +8,7 @@ Verificar primeramente tener Node.Js instalado en la máquina, de lo contrario v
 
 Una vez completada la instalación de NodeJS, en la carpeta raíz de nuestro proyecto ejecutamos los siguientes comandos:
 
-npm install -g @angular/cli
+npm install 
 
 npm start
 
