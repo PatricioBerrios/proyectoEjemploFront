@@ -1,10 +1,12 @@
 # InfoPeople
 
-Este es un proyecto de ejemplo de front en angular para entrevista de LATAM.
+Este es un proyecto de ejemplo de front en angular.
 
 ## Correr el proyecto
 
-Verificar primeramente tener Node.Js instalado en la máquina, de lo contrario visitar el siguiente link: https://nodejs.org/es/download/
+Verificar tenre instalado primeramente el servicio de backend.
+
+Verificar tener Node.Js instalado en la máquina, de lo contrario visitar el siguiente link: https://nodejs.org/es/download/
 
 Una vez completada la instalación de NodeJS, en la carpeta raíz de nuestro proyecto ejecutamos los siguientes comandos:
 
