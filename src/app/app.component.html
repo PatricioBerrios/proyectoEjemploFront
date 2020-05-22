@@ -1,0 +1,45 @@
+<div *ngIf="showSuccessfull" class="banner">
+    <h1 class="display-5">
+        Descubre tu poema de aniversario
+    </h1>
+</div>
+
+<div *ngIf="showSuccessfull" class="container">
+    <div class="row custom-wrapper">
+        <div class="col-md-12">
+            <div class="group-gap">
+                <div>
+                    <div><input type="text" [(ngModel)]="person.firstName" [ngModelOptions]="{standalone: true}" placeholder="Primer nombre" /></div>
+                    <div><input type="text" [(ngModel)]="person.secondName" [ngModelOptions]="{standalone: true}" placeholder="Segundo nombre" /></div>
+                    <div><input type="text" [(ngModel)]="person.firstSurname" [ngModelOptions]="{standalone: true}" placeholder="Primer apellido" /></div>
+                    <div><input type="text" [(ngModel)]="person.secondSurname" [ngModelOptions]="{standalone: true}" placeholder="Segundo apellido" /></div>
+                    <div><input type="date" max="{{date | date:'yyyy-MM-dd'}}" [(ngModel)]="person.birthdayDate" [ngModelOptions]="{standalone: true}" placeholder="Fecha de nacimiento" /></div>
+                    <div *ngIf="!loading"><button class="button" (click)="getInfo()">Descubrir</button></div>
+                    <div *ngIf="loading"><button class="button" [disabled]="loading">Cargando...</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showResult">
+
+    <div *ngIf="infoPerson.birthday" class="banner">
+        <h1 class="display-5">
+            Disfruta tu poema, felicidades!
+        </h1>
+    </div>
+
+    <div *ngIf="!infoPerson.birthday" class="banner">
+        <h1 class="display-5">
+            Lo sentimos, faltan dias aún para recibir el poema!
+        </h1>
+    </div>
+
+    <div><input [disabled]="showResult" type="text" [(ngModel)]="infoPerson.name" [ngModelOptions]="{standalone: true}" /></div>
+    <div><input [disabled]="showResult" type="text" [(ngModel)]="infoPerson.surName" [ngModelOptions]="{standalone: true}" /></div>
+    <div><input [disabled]="showResult" type="text" [(ngModel)]="infoPerson.age" [ngModelOptions]="{standalone: true}" /></div>
+    <textarea *ngIf="infoPerson.birthday" [disabled]="showResult">{{infoPerson.messageCongrats}}</textarea>
+    <div *ngIf="!infoPerson.birthday"><input [disabled]="showResult" type="text" [(ngModel)]="infoPerson.messageCongrats" [ngModelOptions]="{standalone: true}" /></div>
+    <div><button class="button" (click)="tryAgain()">Intentar con otra persona</button></div>
+</div>
